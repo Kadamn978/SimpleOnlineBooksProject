@@ -1,0 +1,244 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f8f8f8;
+    padding: 10px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.logo img {
+    width: 100px;
+    margin-right: 15px;
+}
+
+.companyname h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 10px;
+    color: white;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.small-logo {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.nav-left a,
+.nav-right a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.left-content,
+.right-content {
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+    display: none;
+}
+
+.book-table {
+    width: 55%;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+    /* Allows table to resize */
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        /* Stack left and right content on small screens */
+    }
+
+    .left-content,
+    .right-content {
+        display: none;
+        /* Full width for smaller screens */
+    }
+
+    .book-table {
+        width: 100%;
+        /* Full width for smaller screens */
+    }
+
+    .book-table {
+        margin-top: 20px;
+        /* Add some space above the table */
+    }
+
+    th,
+    td {
+        display: block;
+        /* Stack table cells vertically */
+        text-align: right;
+        /* Align text to the right for better readability */
+        padding: 10px;
+        /* Increase padding for easier touch access */
+    }
+
+    th {
+        position: relative;
+        /* Make th relative for absolute positioning of content */
+        padding-left: 50%;
+        /* Space for text */
+    }
+
+    th::before {
+        content: attr(data-label);
+        /* Show the header title in each cell */
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    img {
+        max-width: 100%;
+        /* Ensure images fit within their cells */
+        height: auto;
+        /* Maintain aspect ratio */
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+}
+
+.footer-left,
+.footer-right {
+    width: 45%;
+}
+
+.footer-bottom {
+    text-align: center;
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    position: relative;
+}
+
+#error-message {
+    background: #EFDCDD;
+    color: red;
+    padding: 10px;
+    margin: 10px;
+    display: none;
+    position: sticky;
+    right: 15px;
+    top: 15px;
+}
+
+#success-message {
+    background: #DEF1D8;
+    color: green;
+    padding: 10px;
+    margin: 10px;
+    display: none;
+    position: sticky;
+    right: 15px;
+    top: 15px;
+}
+
+.delete-btn {
+    background: #e74c3c;
+    color: #fff;
+    border: 0;
+    padding: 4px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.edit-btn {
+    background: #27ae60;
+    color: white;
+    border: 0;
+    padding: 4px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Modal For Styling */
+
+.modal {
+    display: none;
+    /* Hide modal by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
